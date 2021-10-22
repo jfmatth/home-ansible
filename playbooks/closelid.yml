@@ -1,0 +1,23 @@
+---
+- name: Setup proxmox
+  hosts: proxmox
+  remote_user: root
+
+  tasks:
+  - name: Close lid behavior
+    ini_file:
+      path: /etc/systemd/logind.conf
+      section: Login
+      option: HandleLidSwitch
+      value: ignore
+      backup: yes
+
+    notify:
+      - Restart logind
+
+  handlers:
+    - name: Restart logind
+      ansible.builtin.systemd:
+        state: restarted
+        daemon_reload: yes
+        name: systemd-logind
