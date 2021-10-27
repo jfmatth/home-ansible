@@ -1,8 +1,26 @@
 ---
- home:
+home:
   hosts:
     proxmox:
       ansible_user: root
       ansible_connection: ssh
       ansible_host: 192.168.1.100
       
+centos:
+  hosts:
+    centos-1:
+      ansible_user: root
+      ansible_connection: ssh
+      ansible_host: 192.168.1.150
+
+    centos-2:
+      ansible_user: root
+      ansible_connection: ssh
+      ansible_host: 192.168.1.152
+
+ubuntu:
+  hosts:
+    ctUbuntu151:
+      ansible_user: root
+      ansible_connection: ssh
+      ansible_host: 192.168.1.151
