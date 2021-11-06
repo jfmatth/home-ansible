@@ -1,7 +1,6 @@
 ---
-- name: Setup proxmox
-  hosts: proxmox
-  remote_user: root
+- name: Setup
+  hosts: closetlaptops
 
   tasks:
   - name: Close lid behavior
@@ -14,6 +13,7 @@
 
     notify:
       - Restart logind
+
 
   handlers:
     - name: Restart logind

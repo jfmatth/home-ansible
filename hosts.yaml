@@ -1,26 +1,14 @@
 ---
-home:
+closetlaptops:
   hosts:
     proxmox:
       ansible_user: root
       ansible_connection: ssh
       ansible_host: 192.168.1.100
-      
-centos:
-  hosts:
-    centos-1:
-      ansible_user: root
-      ansible_connection: ssh
-      ansible_host: 192.168.1.150
 
-    centos-2:
-      ansible_user: root
+    microk8s:
+      ansible_user: jfmatth
       ansible_connection: ssh
-      ansible_host: 192.168.1.152
+      ansible_host: 192.168.1.101
+      ansible_become: true
 
-ubuntu:
-  hosts:
-    ctUbuntu151:
-      ansible_user: root
-      ansible_connection: ssh
-      ansible_host: 192.168.1.151
