@@ -6,6 +6,13 @@ Ansible playbook(s) to setup my home lab, mainly K3s Kubernetes
 
 **Make sure you're inventory(hosts.yaml) is correct**
 
+## Instructions
+
+Uses Pipenv to use Ansible
+
+`pipenv shell`
+
+Run the playbooks below as needed
 
 ## Playbook - closelid.yaml
 
