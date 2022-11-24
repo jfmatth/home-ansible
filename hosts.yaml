@@ -1,14 +1,19 @@
 ---
-closetlaptops:
-  hosts:
-    proxmox:
-      ansible_user: root
-      ansible_connection: ssh
-      ansible_host: 192.168.1.100
+closet:
+  children:
+    laptops:
+      hosts:
+        k3s-laptop:
+          ansible_user: jfmatth
+          ansible_connection: ssh
+          ansible_host: 192.168.100.51
+          ansible_become: true
+    nodes:
+      hosts:
 
-    microk8s:
-      ansible_user: jfmatth
-      ansible_connection: ssh
-      ansible_host: 192.168.1.101
-      ansible_become: true
 
+    # others:    
+    #   proxmox:
+    #     ansible_user: root
+    #     ansible_connection: ssh
+    #     ansible_host: 192.168.1.100

@@ -1,6 +1,6 @@
 ---
 - name: Setup
-  hosts: closetlaptops
+  hosts: laptops
 
   tasks:
   - name: Close lid behavior
@@ -14,6 +14,11 @@
     notify:
       - Restart logind
 
+  - name: Console off after 10s
+    ansible.builtin.lineinfile:
+      path: /etc/default/grub
+      line: GRUB_CMDLINE_LINUX_DEFAULT="quiet consoleblank=10"
+      create: yes
 
   handlers:
     - name: Restart logind
