@@ -6,6 +6,15 @@ Ansible playbook(s) to setup my home lab, mainly K3s Kubernetes
 
 **Make sure you're inventory(hosts.yaml) is correct**
 
+## TODO
+- New linux boxes get SUDO ALL for sudo group  
+    ```
+    %sudo   ALL=(ALL) NOPASSWD: ALL
+    ```
+- add Nano program  
+- turn off swap  
+
+
 ## Instructions
 
 Uses Pipenv to use Ansible
